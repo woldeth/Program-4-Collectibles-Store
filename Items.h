@@ -27,7 +27,13 @@ public:
 	// Prints the description of the item
 	// Preconditions: None
 	// Postconditions: Prints the ID, QTY and Year (inheriting classes can update toString)
-    virtual void toString();                                                        
+    virtual void toString(); 
+
+    ///--------------------------------- operator< ------------------------------------
+	// Defines have Items are < than eachother
+	// Preconditions: Two objects of the same class 
+	// Postconditions: Determines the lesser than obj
+    virtual bool operator<(const Items &rhs) const { return true;}                                                       
 
 
 };
