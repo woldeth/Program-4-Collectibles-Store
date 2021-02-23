@@ -12,11 +12,18 @@
 using namespace std;
 
 class ComicBooks : public Items {
-public:
-    ComicBooks() : publisher("Tomas W"), grade("Great") {}
-    virtual ~ComicBooks() {}
 
-protected:
+public:
     string publisher;
     string grade;
+    ComicBooks() : publisher("???"), grade("???") {}
+    virtual ~ComicBooks() {}
+
+    ///--------------------------------- toString ------------------------------------
+	// Prints the description of the item
+	// Preconditions: None
+	// Postconditions: Prints out the description for a Comicbook
+    virtual void toString();   
+
+
 };

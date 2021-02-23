@@ -13,10 +13,19 @@ using namespace std;
 
 class SportCards : public Items {
 public:
-    SportCards() : manufacturer("Tomas W"), grade("Great") {}
-    virtual ~SportCards() {}
 
-protected:
     string manufacturer;
     string grade;
+
+    SportCards() : manufacturer("???"), grade("???") {}
+    virtual ~SportCards() {}
+
+    ///--------------------------------- toString ------------------------------------
+	// Prints the description of the item
+	// Preconditions: None
+	// Postconditions: Prints out the description for a SportsCard
+    virtual void toString();   
+
+
+
 };

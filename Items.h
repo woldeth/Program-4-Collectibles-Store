@@ -15,12 +15,18 @@ using namespace std;
 class Items {
 
 public:
-    char id;
-    int qty;
-    int year;
-    
-    Items() : id('Z'), qty(1), year(2021){}              // constructor
+    char id;                                            // Coin (M), Comic (C) or Card (S)
+    int qty;                                            // amount of items
+    int year;                                           // integer year
+
+    Items() : id('?'), qty(1), year(2021){}              // constructor
     virtual ~Items(){}                                   // deconstructor
+
+    ///--------------------------------- toString ------------------------------------
+	// Prints the description of the item
+	// Preconditions: None
+	// Postconditions: Prints the ID, QTY and Year (inheriting classes can update toString)
+    virtual void toString();                                                        
 
 
 };

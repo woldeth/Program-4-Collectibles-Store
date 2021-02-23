@@ -15,9 +15,15 @@ using namespace std;
 //coin
 class Coins : public Items {
 public:
+    int grade; 
+
     Coins(): grade(0){}
     virtual ~Coins() {}
 
-protected:
-    int grade;
+    ///--------------------------------- toString ------------------------------------
+	// Prints the description of the item
+	// Preconditions: None
+	// Postconditions: Prints out the description for a coin
+    virtual void toString();     
+
 };

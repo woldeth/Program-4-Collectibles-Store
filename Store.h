@@ -62,17 +62,17 @@ public:
         // While not end of file 
             // get id 
             // get name
-            // update custTransactionList[id] 
+            // update customerNode in custTransactionList[id] 
     }
 
-    ///--------------------------------- procesAction ------------------------------------
-	// perform actions listed on file
+    ///--------------------------------- processAction ------------------------------------
+	// Perform actions listed on file
 	// Preconditions: infile has been successfully opened and the file contains
     //                 properly formated data (according to the program specs)
 	// Postconditions: All actions list on file will be completed
     void processActions(ifstream &infile) {
         // While not end of file 
-            // get actions Buy, Sell, Display, Customer, History
+            // get action (Buy, Sell, Display, Customer, History)
         
             // if(buy/sell)
                     // get customer id 
@@ -106,5 +106,17 @@ public:
        // ptr->qty-- 
        // record transaction on custTransactionList (append node)
     }
+
+    ///--------------------------------- display ------------------------------------
+	// Prints all the items in the inventory 
+	// Preconditions: None
+	// Postconditions: Prints the full inventoryList 
+    void display(){
+        // for each item in inventoryList 
+            // while transActionNode->next != nullptr 
+                // *itemNode->item->toString()
+    } 
+
+
 
 };
