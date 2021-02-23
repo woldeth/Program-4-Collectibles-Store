@@ -11,11 +11,13 @@
 #include "Items.h"
 
 
+
 using namespace std;
 
 class Store {
 
 private:
+
     struct transactionNode {
         Items* i;               // pointer to item that was sold
         string type;            // type of transaction (Buy or Sell)
@@ -28,15 +30,20 @@ private:
         transactionNode *head;  // first transaction
     };
 
+    customerNode* custTransactionList[1000];       // max of 1000 customers, 3 digit id = index
+    customerNode* alphCustOrder[1000];  // MAY TAKE OUT
+
+
     struct itemNode {
         Items *i;               // item in inventoryList
         itemNode *next;         // if collision with hash build linked list
     };
 
-    itemNode* inventoryList[1543];                 //main list of all items in inventory (1543 is a large prime number)
-    customerNode* custTransactionList[1000];       // max of 1000 customers, 3 digit id = index 
+    itemNode* inventoryList[3079];          //main list of all items in inventory (1543 is a large prime number)
+
 
 public:
+
     Store(){}   //constructor
     ~Store(){}  //deconstructor
 
@@ -71,7 +78,7 @@ public:
     //                 properly formated data (according to the program specs)
 	// Postconditions: All actions list on file will be completed
     void processActions(ifstream &infile) {
-        // While not end of file 
+        // While (not end of file) 
             // get action (Buy, Sell, Display, Customer, History)
         
             // if(buy/sell)
@@ -81,10 +88,10 @@ public:
             //if(Display)
                     //display();
             //if(Customer)
-                    // go to index in custTrasactionList
-                    // Traverse link list and print items
+                    // get customer id 
+                    // customerTransactions(id);
 
-            //if(history)
+            //if(history)  COME BACK TO THIS IDK HOW TO PRINT IN ORDER OF NAME
                 // traverse through BST with key pair
                 // access index in 
     }
@@ -113,9 +120,20 @@ public:
 	// Postconditions: Prints the full inventoryList 
     void display(){
         // for each item in inventoryList 
-            // while transActionNode->next != nullptr 
+            // while ItemNode->I != nullptr 
                 // *itemNode->item->toString()
     } 
+
+    ///--------------------------------- display ------------------------------------
+	// Prints all transactions for a particular customer
+	// Preconditions: None
+	// Postconditions: Prints transactions for a particular customer
+    void customerTransactions(int id){
+        // print name of customer and id 
+        // get ptr custTransactionList[id]->head
+        // while (ptr->next != nullptr)
+            // print(transactions)
+    }
 
 
 

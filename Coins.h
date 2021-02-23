@@ -15,10 +15,12 @@ using namespace std;
 //coin
 class Coins : public Items {
 public:
-    int grade; 
+    int grade;                  // Grade of Coin
 
-    Coins(): grade(0){}
-    virtual ~Coins() {}
+    Coins(): grade(-1){}         // Constructor 
+    Coins(int g): grade(g){}    // Constructor
+
+    virtual ~Coins() {}         // Destructor 
 
     ///--------------------------------- toString ------------------------------------
 	// Prints the description of the item

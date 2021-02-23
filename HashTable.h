@@ -14,11 +14,11 @@ using namespace std;
 
 class HashTable {
 
-protected:
-    Items* inventoryList[1543];
-
 public:
-    HashTable() {}
+    
+    int arraySize;
+    HashTable(int size) : arraySize(size) {}
+
     virtual ~HashTable(){}
     virtual int HashFunction(Items *ptrItem);
     virtual int retrieveFunction(Items *ptrItem);

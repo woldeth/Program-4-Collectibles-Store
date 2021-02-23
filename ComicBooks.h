@@ -17,6 +17,8 @@ public:
     string publisher;
     string grade;
     ComicBooks() : publisher("???"), grade("???") {}
+    ComicBooks(string p, string g) : publisher(p), grade(g) {}
+    
     virtual ~ComicBooks() {}
 
     ///--------------------------------- toString ------------------------------------

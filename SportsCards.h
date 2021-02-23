@@ -11,21 +11,19 @@
 
 using namespace std;
 
-class SportCards : public Items {
+class SportCards : public Items
+{
 public:
-
     string manufacturer;
     string grade;
 
-    SportCards() : manufacturer("???"), grade("???") {}
-    virtual ~SportCards() {}
+    SportCards() : manufacturer("???"), grade("???") {}           // constructor
+    SportCards(string m, string g) : manufacturer(m), grade(g) {} // constructor
+    virtual ~SportCards() {}                                      //destructor
 
     ///--------------------------------- toString ------------------------------------
-	// Prints the description of the item
-	// Preconditions: None
-	// Postconditions: Prints out the description for a SportsCard
-    virtual void toString();   
-
-
-
+    // Prints the description of the item
+    // Preconditions: None
+    // Postconditions: Prints out the description for a SportsCard
+    virtual void toString();
 };

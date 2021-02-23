@@ -19,8 +19,9 @@ public:
     int qty;                                            // amount of items
     int year;                                           // integer year
 
-    Items() : id('?'), qty(1), year(2021){}              // constructor
-    virtual ~Items(){}                                   // deconstructor
+    Items() : id('?'), qty(1), year(2021){}                 // constructor
+    Items(char i, int q, int y) : id(i), qty(q), year(y){}  // constructor
+    virtual ~Items(){}                                      // deconstructor
 
     ///--------------------------------- toString ------------------------------------
 	// Prints the description of the item
