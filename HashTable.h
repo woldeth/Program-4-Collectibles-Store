@@ -17,9 +17,11 @@ class HashTable {
 public:
     
     int arraySize;
-    HashTable(int size) : arraySize(size) {}
+    int numOfItems; 
+    HashTable(int size, int num) : arraySize(size), numOfItems(num) {}
 
     virtual ~HashTable(){}
+    
     virtual int HashFunction(Items *ptrItem);
     virtual int retrieveFunction(Items *ptrItem);
 
