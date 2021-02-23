@@ -48,6 +48,8 @@ int main()
     Store st1;
     st1.buildInventory(infile1);            // initialize item inventoryList
     st1.buildCustomerList(infile2);         // initialize customerList
+    st1.processActions(infile3);
+    
     
 
     return 0;
