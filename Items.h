@@ -14,12 +14,11 @@ using namespace std;
 // Base class 
 class Items {
 
-protected:
+public:
     char id;
     int qty;
-    int year; 
-
-public:
+    int year;
+    
     Items() : id('Z'), qty(1), year(2021){}              // constructor
     virtual ~Items(){}                                   // deconstructor
 
