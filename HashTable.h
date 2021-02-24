@@ -1,6 +1,6 @@
 // ------------------------------------------------------------------------
 // Name: Tomas H Woldemichael
-// Date: Feb 11, 2021
+// Date: Feb 23, 2021
 // File Name: Store.h
 // Title: PROGRAM 4
 // -------------------------------------------------------------------------
@@ -12,17 +12,22 @@
 
 using namespace std;
 
-class HashTable {
+class HashTable
+{
 
 public:
-    
-    int arraySize;
-    int numOfItems; 
-    HashTable(int size, int num) : arraySize(size), numOfItems(num) {}
+    int arraySize; // size of inventoryList in Store
+    HashTable(int size) : arraySize(size) {}
+    ~HashTable() {}
 
-    virtual ~HashTable(){}
-    
-    virtual int HashFunction(Items *ptrItem);
-    virtual int retrieveFunction(Items *ptrItem);
-
+    ///--------------------------------- retrieveIndex ------------------------------------
+    // returns the index of a particular Item
+    // Preconditions: Class has a hash function and a valid size for inventory list
+    // Postconditions: Returns the index of where the inventory should be stored in hash array
+    int retrieveIndex(Items *ptrItem)
+    {
+        // index = ptrItem->hash() % arraySize;
+        // return index
+        return 0;
+    }
 };

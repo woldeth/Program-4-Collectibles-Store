@@ -41,12 +41,11 @@ private:
 
     itemNode *inventoryList[3079]; //main list of all items in inventory (1543 is a large prime number)
 
-    SearchTreeCustomer stCustomers; // search tree for the customer objects
-    SearchTreeItems stCoins;        // search tree for coins
-    SearchTreeItems stComicBooks;   // search tree for comic books
-    SearchTreeItems stSportCards;   // searc tree for sports cards
+    SearchTreeCustomer bstCustomers; // search tree for the customer objects
+    SearchTreeItems bstItems;        // search tree for coins
 
 public:
+
     Store() {}  //constructor
     ~Store() {} //deconstructor
 

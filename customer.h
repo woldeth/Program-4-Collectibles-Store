@@ -1,6 +1,6 @@
 // ------------------------------------------------------------------------
 // Name: Tomas H Woldemichael
-// Date: Feb 11, 2021
+// Date: Feb 23, 2021
 // File Name: customer.h
 // Title: PROGRAM 4
 // -------------------------------------------------------------------------
@@ -11,19 +11,24 @@
 
 using namespace std;
 
-class Customer {
+class Customer
+{
 
 public:
-    int id;
-    string name;
+    int id;      // 3 digit id
+    string name; // name of customr
 
-    Customer() : id(-1) , name("???") {}
-    Customer(int i, string n) : id(i) , name(n) {}
-    ~Customer(){}
+    Customer() : id(-1), name("???") {}
+    Customer(int i, string n) : id(i), name(n) {}
+    ~Customer() {}
 
-    bool operator<(const Customer &rhs) const { return true;}
-
-
-
-
+    ///--------------------------------- operator< ------------------------------------
+    // Defines lesser than operator for Customer
+    // Preconditions: Two objects of the same class
+    // Postconditions: Determines the lesser than Object from customers
+    bool operator<(const Customer &rhs) const
+    {
+        // customers will compare names to determine for alphanumeric ordering
+        return true;
+    }
 };
