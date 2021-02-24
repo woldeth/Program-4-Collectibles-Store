@@ -16,9 +16,9 @@ class HashTable
 {
 
 public:
-    int arraySize; // size of inventoryList in Store
-    HashTable(int size) : arraySize(size) {}
-    HashTable() : arraySize(3079) {}
+    int arraySize;                           // size of inventoryList in Store
+    HashTable(int size) : arraySize(size) {} // Constructor with parameters
+    HashTable() : arraySize(3079) {}         // Constructor if nothing passed in
 
     ~HashTable() {}
 

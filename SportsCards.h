@@ -17,7 +17,7 @@ public:
     string manufacturer; // manafaturer of SportsCard
     string grade;        // Grade of sports cards
 
-    SportCards() : manufacturer("???"), grade("???") {}           // constructor
+    SportCards() : manufacturer("???"), grade("???") {}           // Constructor if nothing passed in
     SportCards(string m, string g) : manufacturer(m), grade(g) {} // constructor w/ parameters
     virtual ~SportCards() {}                                      //destructor
 

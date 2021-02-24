@@ -18,8 +18,8 @@ public:
     int id;      // 3 digit id
     string name; // name of customr
 
-    Customer() : id(-1), name("???") {}
-    Customer(int i, string n) : id(i), name(n) {}
+    Customer() : id(-1), name("???") {}           // Constructor if nothing passed in
+    Customer(int i, string n) : id(i), name(n) {} // Constructor with parameters
     ~Customer() {}
 
     ///--------------------------------- operator< ------------------------------------

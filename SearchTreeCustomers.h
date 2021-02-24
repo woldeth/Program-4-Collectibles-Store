@@ -21,28 +21,29 @@ public:
 private:
     struct Node
     {
-        Customer *item;                                               // Pointer to customer obj
+        Customer *item;                                               // Pointer to customer object
         Node *left;                                                   // Pointer to left child
         Node *right;                                                  // Pointer to right child
         Node(Customer *i) : item(i), left(nullptr), right(nullptr) {} // Constructor to initialize node
     };
 
-    Node *root; // Root Node of SearchTree
+    Node *root; // Root Node of custSearchTree
 
-    void insertPrivate(Customer *ptr, Node *&node, bool &flag); // Helper function for insertion of new node - inorder traverals
-    void inOrderPrivate(const Node *const &node) const;         // Helper function for Ostream << - preorder taversal
+    ///--------------------------------- Insert ------------------------------------
+    // Takse ptr to customer and creates node to put in BST
+    // Preconditions: unique customer in bst     
+    // Postconditions: Nodes is inseerted in bst
+    bool insert(Customer *ptr);
 
-    void makeEmptyPrivate(Node *&node);                                       // Helper function to clear SearchTree - post order traversal
-    Node *retrievePrivate(Node *node, const Customer &c1) const; // Helper function to retrieve a comparable from a node
+    ///--------------------------------- makeEmpty ------------------------------------
+    // clears all dynamicall allocated memory
+    // Preconditions: none    
+    // Postconditions: bst is cleared out completely 
+    void makeEmpty();        
 
-    void removeRootPrivate(); // Helper function to remove the root node
-
-
-
-    //Mutators
-    bool insert(Customer *ptr); // Inserts a Customer into the tree or increments
-    void makeEmpty();           // Removes and deallocates all of the data from the tree (Tree still there)
-
-    //Accessors
-    const Customer* retrieve(const Customer &c1) const; // Returns the customer in within the SearchTree if found
+    ///--------------------------------- traverseInorder ------------------------------------
+    // Traverse the customer tree to print out all transactions
+    // Preconditions: custTransactionList is populated with transactions
+    // Postconditions: All transactions will be printed inorder of alpha numeric of customer 
+    const void traverseInorder() const; 
 };

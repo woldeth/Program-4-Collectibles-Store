@@ -15,10 +15,10 @@ class ComicBooks : public Items
 {
 
 public:
-    string publisher; // string for publisher name
-    string grade;     // string for grade of comic book
-    ComicBooks() : publisher("?"), grade("?") {}
-    ComicBooks(string p, string g) : publisher(p), grade(g) {}
+    string publisher;                                          // string for publisher name
+    string grade;                                              // string for grade of comic book
+    ComicBooks() : publisher("?"), grade("?") {}               // Constructor if nothing passed in
+    ComicBooks(string p, string g) : publisher(p), grade(g) {} // Constructor with parameters
 
     virtual ~ComicBooks() {}
 

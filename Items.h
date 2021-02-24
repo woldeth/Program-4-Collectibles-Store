@@ -19,7 +19,7 @@ public:
     int qty;  // amount of this item in inventory
     int year; // integer year
 
-    Items() : id('?'), qty(1), year(2021) {}                // constructor
+    Items() : id('?'), qty(1), year(2021) {}                // constructor if nothing passed in
     Items(char i, int q, int y) : id(i), qty(q), year(y) {} // constructor with parameters
     virtual ~Items() {}                                     // deconstructor
 

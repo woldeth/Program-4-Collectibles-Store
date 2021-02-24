@@ -17,7 +17,7 @@ class Coins : public Items
 public:
     int grade; // Grade of Coin
 
-    Coins() : grade(-1) {}     // Constructor
+    Coins() : grade(-1) {}     // Constructor if nothing passed in
     Coins(int g) : grade(g) {} // Constructor with parameters
 
     virtual ~Coins() {} // Destructor
@@ -28,11 +28,11 @@ public:
     // Postconditions: Prints out the description for a coin
     virtual void toString()
     {
-        // update toString to add addtional grade
+        // update toString to add addtional grade for coin
     }
 
     ///--------------------------------- operator< ------------------------------------
-    // Defines have Items are < than eachother
+    // Defines lesser than operator for coin
     // Preconditions: Two objects of the same subclass
     // Postconditions: Determines the lesser than Object from Coins
     virtual bool operator<(const Items &rhs) const
