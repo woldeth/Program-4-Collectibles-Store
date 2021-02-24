@@ -18,6 +18,8 @@ class HashTable
 public:
     int arraySize; // size of inventoryList in Store
     HashTable(int size) : arraySize(size) {}
+    HashTable() : arraySize(3079) {}
+
     ~HashTable() {}
 
     ///--------------------------------- retrieveIndex ------------------------------------

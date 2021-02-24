@@ -1,13 +1,10 @@
-// ------------------------------------------------------------------------//
+// ------------------------------------------------------------------------
 // Name: Tomas H Woldemichael
-// Date: January 13, 2021
-// File Name: SearchTree.h
-// Title: PROGRAM 1
-// Description: This file is the SearchTree header file. Users will be able
-// to create a Binary Search tree and input different Comparablie items into
-// the SearchTree. The Search true has additional features to identify
-// key characteristics of the SearchTree such as depth, descendants and more.
-// ------------------------------------------------------------------------//
+// Date: Feb 23, 2021
+// File Name: SearchTreeCustomers.h
+// Title: PROGRAM 4
+// -------------------------------------------------------------------------
+
 #pragma once
 
 #include <iostream>

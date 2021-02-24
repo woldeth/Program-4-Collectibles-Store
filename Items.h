@@ -38,7 +38,7 @@ public:
     // Postconditions: Determines the lesser than obj
     virtual bool operator<(const Items &rhs) const
     {
-        // compares to see Coin< Comic Book < SportsBook
+        // compares to see Coin < Comic Book < SportsBook
         // comparing book vs book will be handeled in subclass
         return true;
     }

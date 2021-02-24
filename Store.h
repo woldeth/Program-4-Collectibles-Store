@@ -12,6 +12,9 @@
 #include "customer.h"
 #include "SearchTreeCustomers.h"
 #include "SearchTreeItems.h"
+#include "HashTable.h"
+
+const int SIZE = 3079;
 
 using namespace std;
 
@@ -19,33 +22,37 @@ class Store
 {
 
 private:
+    // Nodes to keep track of all transations
     struct transactionNode
     {
         Items *i;              // pointer to item that was sold
-        string type;           // type of transaction (Buy or Sell)
+        string transType;      // type of transaction (Buy or Sell)
         transactionNode *next; // next transaction for the customer
     };
 
+    //Node to hold customer obj and Head of transaction list.
     struct customerNode
     {
         Customer *cust;        // customer ptr
-        transactionNode *head; // first transaction
+        transactionNode *head; // first transaction/ head pointer
     };
 
     customerNode *custTransactionList[1000]; // max of 1000 customers, 3 digit id = index
+
+    // Node to keep store all pointer to item via the hash
     struct itemNode
     {
         Items *i;       // item in inventoryList
         itemNode *next; // if collision with hash build linked list
     };
 
-    itemNode *inventoryList[3079]; //main list of all items in inventory (1543 is a large prime number)
+    itemNode *inventoryList[SIZE]; //main list of all items in inventory (3079 is a large prime number)
 
     SearchTreeCustomer bstCustomers; // search tree for the customer objects
     SearchTreeItems bstItems;        // search tree for coins
+    HashTable ht;                    // initalize hashTable class
 
 public:
-
     Store() {}  //constructor
     ~Store() {} //deconstructor
 
@@ -58,8 +65,10 @@ public:
     {
         // While not end of file
         // 1. get the first char identify the type
-        // 2. if M/C/S build that type of object
-        // 3. Hash using key and store in private inventoryList
+        // 2. if M/C/S create new object
+        // 3. Store item in bstItem
+        // 4. get Index using hashTable
+        // 5. store invertory in inventoryList
     }
 
     ///--------------------------------- BuildCustomerList ------------------------------------
@@ -70,8 +79,9 @@ public:
     void buildCustomerList(ifstream &infile)
     {
         // While not end of file
-        // get id
-        // get name
+        // get id, get name
+        // create customer obj
+        // store customer in bstCustomers
         // update customerNode in custTransactionList[id]
     }
 
@@ -87,17 +97,19 @@ public:
 
         // if(buy/sell)
         // get customer id
-        // retrieve ptr to item with HASH FUNCTION item in inventory list
-        // buyItem() or sellItem() (record transaction)
+        // create tempItem and hash to get index
+        // buyItem() / sellItem() records transaction
         //if(Display)
         //display();
         //if(Customer)
         // get customer id
         // customerTransactions(id);
 
-        //if(history)  COME BACK TO THIS IDK HOW TO PRINT IN ORDER OF NAME
-        // traverse through BST with key pair
-        // access index in
+        //if(history)
+        // traverse through bstCustomer inOrder and get id
+        // access custTransaction[id]
+        // traverse linked list
+        // print(customr)
     }
 
     ///--------------------------------- buyItem ------------------------------------
@@ -126,9 +138,8 @@ public:
     // Postconditions: Prints the full inventoryList
     void display()
     {
-        // for each item in inventoryList
-        // while ItemNode->I != nullptr
-        // *itemNode->item->toString()
+        //traverse bstItems inorder
+        //print out each item
     }
 
     ///--------------------------------- customerTransations ------------------------------------
